@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会议纪要 - 中科易创项目试生产验证计划评审</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Microsoft YaHei', 'Segoe UI', sans-serif;
+        }
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a56db, #0e2e6e);
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .header .subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            background: #eef2f7;
+            padding: 15px 30px;
+            border-bottom: 1px solid #d1d5db;
+        }
+        .meta-item {
+            flex: 1 1 300px;
+            margin: 8px 0;
+            padding: 0 10px;
+        }
+        .meta-item strong {
+            color: #1e40af;
+            font-weight: 600;
+        }
+        .section {
+            padding: 25px 30px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .section:last-child {
+            border-bottom: none;
+        }
+        .section-title {
+            color: #1e40af;
+            font-size: 22px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #dbeafe;
+            font-weight: 600;
+        }
+        .decision-box {
+            background: #dbeafe;
+            border-left: 4px solid #3b82f6;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .action-item {
+            background: #f0fdf4;
+            border-left: 4px solid #10b981;
+            padding: 12px 15px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+        .priority-high {
+            color: #dc2626;
+            font-weight: 600;
+        }
+        .priority-medium {
+            color: #ea580c;
+            font-weight: 600;
+        }
+        .attendee-list {
+            list-style-type: none;
+            columns: 2;
+            column-gap: 20px;
+        }
+        .attendee-list li {
+            padding: 6px 0;
+            position: relative;
+            padding-left: 20px;
+        }
+        .attendee-list li:before {
+            content: "•";
+            color: #3b82f6;
+            position: absolute;
+            left: 0;
+            font-size: 20px;
+            line-height: 1;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        th {
+            background-color: #3b82f6;
+            color: white;
+            text-align: left;
+            padding: 12px 15px;
+            font-weight: 600;
+        }
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        tr:hover {
+            background-color: #f0f7ff;
+        }
+        .note {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 6px 6px 0;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #6b7280;
+            font-size: 14px;
+            background: #f9fafb;
+            border-top: 1px solid #e5e7eb;
+        }
+        @media (max-width: 768px) {
+            .meta-item {
+                flex: 1 1 100%;
+            }
+            .attendee-list {
+                columns: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>中科易创项目试生产验证计划评审会议纪要</h1>
+            <div class="subtitle">工艺验证与质量控制专项讨论</div>
+        </div>
+        
+        <div class="meta-info">
+            <div class="meta-item">
+                <strong>会议时间：</strong>本周四（具体日期待确认）
+            </div>
+            <div class="meta-item">
+                <strong>会议形式：</strong>线上会议
+            </div>
+            <div class="meta-item">
+                <strong>记录整理：</strong>专业会议纪要生成系统
+            </div>
+            <div class="meta-item">
+                <strong>版本：</strong>1.0
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">参会人员</h2>
+            <ul class="attendee-list">
+                <li>金老师 (说话人A) - 项目质量负责人</li>
+                <li>Mandy (说话人B) - USI工程代表</li>
+                <li>中科易创代表 (说话人C) - 客户方技术对接</li>
+                <li>舒工 (说话人D) - 工艺专家</li>
+                <li>USI工程人员 (说话人E) - 工艺验证</li>
+                <li>汪工 (说话人F) - 硬件设计</li>
+                <li>刘工 (说话人I) - 生产工程</li>
+                <li>其他USI团队成员 (说话人G/H)</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">会议目标</h2>
+            <p>评审120套试生产验证计划，确保在PD生产前达成以下目标：</p>
+            <ul>
+                <li>确认各工艺环节的验证方法和验收标准</li>
+                <li>明确关键质量控制点与风险防控措施</li>
+                <li>制定详细的验证执行计划和时间节点</li>
+                <li>确定试生产所需物料数量和资源配置</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">核心讨论与决议</h2>
+            
+            <div class="decision-box">
+                <h3>1. 来料检验标准</h3>
+                <p><span class="priority-high">决议：</span>中科易创需当天提供PCB特殊尺寸要求，其他电子料按USI工厂标准执行</p>
+                <ul>
+                    <li>PCB特殊特性尺寸：供应商提供30片数据，CPK≥1.67</li>
+                    <li>连接器(154P)重点检查：需建立专项作业指导书（PIN针歪斜、塑胶开裂等）</li>
+                    <li>主容类元件：必须进行LCR测试</li>
+                    <li>芯片类元件：检查包装丝印和外观</li>
+                </ul>
+            </div>
+            
+            <div class="decision-box">
+                <h3>2. 锡膏印刷工艺</h3>
+                <p><span class="priority-high">决议：</span>验证计划需补充详细参数调整方法</p>
+                <ul>
+                    <li>使用2片光板进行初始参数调试（刮刀压力/速度/脱模参数）</li>
+                    <li>通过30片SPI数据分析确定最终参数（高度/面积/体积CPK）</li>
+                    <li>钢网张力需管控极差值</li>
+                    <li>阶梯钢网应用需符合中科易创提供的加厚要求</li>
+                </ul>
+            </div>
+            
+            <div class="decision-box">
+                <h3>3. 底部填充工艺（关键风险点）</h3>
+                <p><span class="priority-medium">决议：</span>需提交详细验证方案，空洞率≤10%</p>
+                <ul>
+                    <li>验证要素：点胶路径(L/U型)、点胶次数/间隔、预热温度(≤80℃)</li>
+                    <li>中科易创提供NDS标准（空洞率、填充量、外观要求）</li>
+                    <li>破坏性测试：选取2片进行切片分析</li>
+                    <li>胶水TG点必须符合标准要求</li>
+                </ul>
+            </div>
+            
+            <div class="decision-box">
+                <h3>4. AOI程序验证</h3>
+                <p><span class="priority-high">决议：</span>必须包含虚焊等NG样件</p>
+                <ul>
+                    <li>重点验证154P连接器虚焊检测能力</li>
+                    <li>前出/侧出两种版本均需单独验证</li>
+                    <li>准备专用测试板包含各类缺陷样本</li>
+                    <li>30片验证样本用于程序优化</li>
+                </ul>
+            </div>
+            
+            <div class="decision-box">
+                <h3>5. 物料与数量</h3>
+                <p><span class="priority-medium">决议：</span>重新评估验证所需板子数量</p>
+                <ul>
+                    <li>原定120套可能不足，需增加备用数量</li>
+                    <li>USI需在周五上午提供详细工序需求清单</li>
+                    <li>优先使用非破坏性验证板流转至下工序</li>
+                    <li>中科易创补充提供三防漆调试用样品板</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">行动项追踪表</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>任务内容</th>
+                        <th>责任人</th>
+                        <th>截止时间</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>提供PCB特殊尺寸要求及电子料特殊要求</td>
+                        <td>中科易创代表</td>
+                        <td>会议当天</td>
+                        <td>进行中</td>
+                    </tr>
+                    <tr>
+                        <td>提交详细工艺验证计划（含各工序数量需求）</td>
+                        <td>Mandy/USI团队</td>
+                        <td>周五上午</td>
+                        <td>待开始</td>
+                    </tr>
+                    <tr>
+                        <td>提供底部填充NDS标准及三防漆作业指导书</td>
+                        <td>中科易创代表</td>
+                        <td>本周内</td>
+                        <td>待开始</td>
+                    </tr>
+                    <tr>
+                        <td>确认烧录程序位置（FCT后或包装前）</td>
+                        <td>中科易创/日产研发</td>
+                        <td>本周内</td>
+                        <td>待确认</td>
+                    </tr>
+                    <tr>
+                        <td>完成供应商调查表填写</td>
+                        <td>USI团队</td>
+                        <td>下周五16:00</td>
+                        <td>待开始</td>
+                    </tr>
+                    <tr>
+                        <td>输出所有验证环节的BOE报告模板</td>
+                        <td>USI质量团队</td>
+                        <td>试生产前</td>
+                        <td>待开始</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">特别说明</h2>
+            <div class="note">
+                <p><strong>验证原则：</strong>所有工艺验证必须保留完整记录，采用破坏性测试的板子需明确标注，非破坏性验证板应流转至后续工序继续使用。</p>
+                <p><strong>风险预警：</strong>底部填充空洞率≤10%要求具有挑战性，需预留参数调整余量和备用板数量。</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>本纪要生成时间：2023年X月X日 | 保密等级：内部使用</p>
+            <p>© 2023 专业会议纪要生成系统 - 确保信息准确传递</p>
+        </div>
+    </div>
+</body>
+</html>
