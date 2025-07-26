@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会议纪要 - 电阻异常问题分析与MOS器件失效跟踪</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a56db, #0e3a9e);
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+        .header h2 {
+            font-size: 18px;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            padding: 25px 30px;
+            background: #f0f5ff;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .info-item {
+            display: flex;
+        }
+        .info-label {
+            font-weight: 600;
+            min-width: 80px;
+            color: #4a5568;
+        }
+        .info-content {
+            flex: 1;
+        }
+        .section {
+            padding: 25px 30px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .section-title {
+            color: #1a56db;
+            font-size: 22px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+        }
+        .section-title:before {
+            content: "■";
+            margin-right: 10px;
+            color: #1a56db;
+        }
+        .subsection {
+            margin-bottom: 25px;
+        }
+        .subsection-title {
+            font-size: 18px;
+            color: #2d3748;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .subsection-title:before {
+            content: "▸";
+            margin-right: 8px;
+            color: #4a5568;
+        }
+        .content-box {
+            background: #f8fafc;
+            border-left: 4px solid #1a56db;
+            padding: 18px;
+            border-radius: 0 6px 6px 0;
+            margin: 15px 0;
+        }
+        .content-item {
+            margin-bottom: 12px;
+        }
+        .highlight {
+            background-color: #fffbeb;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .priority-high {
+            color: #dc3545;
+            font-weight: 700;
+        }
+        .priority-medium {
+            color: #e67700;
+            font-weight: 600;
+        }
+        .decision-box {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            border-left: 4px solid #1a56db;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        th {
+            background: #1a56db;
+            color: white;
+            text-align: left;
+            padding: 12px 15px;
+            font-weight: 600;
+        }
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        tr:nth-child(even) {
+            background: #f8fafc;
+        }
+        tr:hover {
+            background: #ebf4ff;
+        }
+        .footer {
+            text-align: center;
+            padding: 25px;
+            color: #718096;
+            font-size: 14px;
+            background: #f0f5ff;
+        }
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .section, .header {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>电阻异常问题分析与MOS器件失效跟踪会议</h1>
+            <h2>项目问题分析专项讨论</h2>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-item">
+                <div class="info-label">会议时间：</div>
+                <div class="info-content">根据会议记录补充具体日期</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">会议形式：</div>
+                <div class="info-content">线上会议</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">主持人：</div>
+                <div class="info-content">刘峰（说话人A）</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">参会人员：</div>
+                <div class="info-content">
+                    刘峰（说话人A），郭工（说话人B），舒工（说话人C），王璇，刘光
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">会议议程及讨论内容</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">议题一：电阻异常问题分析（汇报人：舒工）</h3>
+                <div class="content-box">
+                    <div class="content-item">
+                        <strong>问题背景：</strong> 0319批次电阻存在异常，41例阻值偏离下限-2%，分布无规律性
+                    </div>
+                    <div class="content-item">
+                        <strong>根本原因分析：</strong>
+                        <ul style="padding-left: 20px; margin-top: 8px;">
+                            <li>原厂解释为裂纹短路效应（内部裂纹导致阻值偏小）</li>
+                            <li>后续使用中裂纹扩展导致故障暴露</li>
+                            <li>生产全工序排查（SMT/顶针/推板/插件/ICT/分板/组装/周转/URL测试）均未发现明显异常</li>
+                        </ul>
+                    </div>
+                    <div class="content-item">
+                        <strong>关键数据发现：</strong>
+                        <ul style="padding-left: 20px; margin-top: 8px;">
+                            <li>同批次电阻在其他28款产品中无类似问题（含FY项目3000+套）</li>
+                            <li>撞击实验证实：轻微撞击可导致阻值偏小约2%且目视无痕迹</li>
+                        </ul>
+                    </div>
+                    <div class="content-item">
+                        <strong>风险分析：</strong>
+                        <span class="priority-high">41个异常电阻存在潜在耐久性失效风险</span> - 
+                        市场运行中可能因震动/温度变化导致裂纹扩展
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">议题二：MOS器件失效问题跟踪（汇报人：舒工）</h3>
+                <div class="content-box">
+                    <div class="content-item">
+                        <strong>原厂分析结论：</strong> ESD损伤导致，使用中故障扩大
+                    </div>
+                    <div class="content-item">
+                        <strong>设计审查结果：</strong> LRC确认电路设计无风险（电压/电流均在手册范围）
+                    </div>
+                    <div class="content-item">
+                        <strong>改进措施：</strong>
+                        <ul style="padding-left: 20px; margin-top: 8px;">
+                            <li>ESD专题活动推进（ASD三方审核中）</li>
+                            <li>ESD专员培训取证（计划9月底完成）</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">会议决议与行动项</h2>
+            
+            <div class="decision-box">
+                <strong>决议：</strong> 第一例MOS失效问题按ESD风险排查方向推进后关闭
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>行动项</th>
+                        <th>负责人</th>
+                        <th>协作方</th>
+                        <th>完成标准</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span class="priority-high">提供41个异常电阻条码清单</span>（可复制格式）
+                        </td>
+                        <td>舒工</td>
+                        <td>一网络</td>
+                        <td>邮件发送王璇</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            匹配电阻条码与电池包编码/VIN号
+                        </td>
+                        <td>王璇</td>
+                        <td>刘峰</td>
+                        <td>生成VIN清单</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="priority-high">分析异常电阻对应车辆的故障数据</span>（重点关注MOS故障）
+                        </td>
+                        <td>郭工</td>
+                        <td>刘光</td>
+                        <td>输出数据分析报告</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            选取1-2个典型异常电阻（-2%偏差）对应电池包
+                        </td>
+                        <td>刘峰</td>
+                        <td>郭工</td>
+                        <td>实物状态检查</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ESD专题活动跟进（含ASD审核结果）
+                        </td>
+                        <td>舒工</td>
+                        <td>-</td>
+                        <td>9月底完成</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">附件清单</h2>
+            <div class="content-box">
+                <div class="content-item">1. 电阻异常分析报告（含41个异常电阻清单）</div>
+                <div class="content-item">2. MOS失效分析报告（更新版）</div>
+                <div class="content-item">3. ESD专题活动计划表</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>会议记录生成时间：<span id="currentDate"></span> | 专业会议纪要HTML生成系统</p>
+            <p>注：此文档为自动生成的正式会议纪要，内容基于原始会议记录</p>
+        </div>
+    </div>
+
+    <script>
+        // 自动添加当前日期
+        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('zh-CN', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    </script>
+</body>
+</html>
