@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会议纪要 - 电阻异常问题分析会</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .meeting-header {
+            background: #2c3e50;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .section {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        h1 {
+            margin-top: 0;
+            font-size: 28px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2980b9;
+            font-size: 22px;
+            margin-top: 0;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+        }
+        .decision-item {
+            background: #e7f3ff;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+        .priority-high {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .key-point {
+            background-color: #fffde7;
+            padding: 10px 15px;
+            border-left: 4px solid #ffc107;
+            margin: 10px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+            text-align: left;
+            padding: 12px;
+        }
+        td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #eee;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        .action-required {
+            font-weight: bold;
+            color: #c0392b;
+        }
+        .person {
+            font-weight: bold;
+            color: #16a085;
+        }
+        .timestamp {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        @media print {
+            body {
+                padding: 10px;
+                background: white;
+            }
+            .meeting-header {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="meeting-header">
+        <h1>会议纪要 - 电阻异常问题分析会</h1>
+        <div class="timestamp">会议时间：2023年X月X日 03:30-04:31</div>
+        <div class="timestamp">会议地点：线上会议</div>
+    </div>
+
+    <div class="section">
+        <h2>参会人员</h2>
+        <p><span class="person">刘峰（刘工）</span>、<span class="person">郭工</span>、<span class="person">舒工</span>、<span class="person">杜静</span>、<span class="person">王璇</span></p>
+    </div>
+
+    <div class="section">
+        <h2>会议议程</h2>
+        <ol>
+            <li>电阻值异常问题分析（舒工汇报）</li>
+            <li>MOS器件失效问题进展（舒工汇报）</li>
+            <li>后续行动计划讨论</li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>议题讨论与决议</h2>
+        
+        <div class="decision-item">
+            <h3>议题一：电阻值异常问题分析</h3>
+            <div class="key-point">
+                <strong>问题描述：</strong>电阻值异常偏小（开路表现偏大），0319批次41例电阻值偏离下限（-2%聚集）
+            </div>
+            <p><strong>原厂分析：</strong>裂纹短路效应导致（电阻挤压开裂导致内部短路路径）</p>
+            <p><strong>工序排查结果：</strong></p>
+            <ul>
+                <li>SMT工序：吸嘴吸力/下压参数未调整，仅2.0点位异常</li>
+                <li>顶针/推板/插件/ICT测试/模具/下针/图付/分板/组装等工序：均排除风险</li>
+                <li>周转过程：专用吸塑托盘，四角支撑，排除压伤风险</li>
+            </ul>
+            <div class="key-point">
+                <strong>关键发现：</strong>
+                <ul>
+                    <li>验证实验：撞击会导致阻值偏小（2%左右），EOL测试正常但存在耐久失效风险</li>
+                    <li>物料共用情况：28款产品使用该物料，仅当前项目发现问题</li>
+                    <li>FY项目3000多套产品分布正常（±1%区间）</li>
+                </ul>
+            </div>
+            <p><strong>决议：</strong></p>
+            <ol>
+                <li>立即导出41个异常电阻对应的SO清单（<span class="person">舒工</span>负责）</li>
+                <li>匹配电池包码和整车VIN（<span class="person">刘工</span>负责）</li>
+                <li>查询相关车辆是否有MOS故障记录（<span class="person">郭工</span>负责）</li>
+                <li>对2%偏差车辆优先换件分析</li>
+            </ol>
+        </div>
+
+        <div class="decision-item">
+            <h3>议题二：MOS器件失效问题进展</h3>
+            <p><strong>原厂分析：</strong>倾向ESD损伤导致，使用中故障扩大</p>
+            <p><strong>设计验证：</strong>LRC确认电路设计无风险（电压/电流均满足手册要求）</p>
+            <div class="key-point">
+                <strong>当前措施：</strong>
+                <ul>
+                    <li>ESD专题活动推进中（7月底完成）</li>
+                    <li>ESD专员培训取证（9月底完成）</li>
+                    <li>ASD三方审核进行中</li>
+                </ul>
+            </div>
+            <p><strong>决议：</strong>继续按ESD整改方向推进，暂不关闭问题</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>行动计划</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>任务内容</th>
+                    <th>负责人</th>
+                    <th>完成要求</th>
+                    <th>状态</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>导出41个异常电阻SO清单</td>
+                    <td class="person">舒工</td>
+                    <td>提供可复制粘贴格式</td>
+                    <td class="action-required">待处理</td>
+                </tr>
+                <tr>
+                    <td>匹配电池包码和整车VIN</td>
+                    <td class="person">刘工</td>
+                    <td>关联异常电阻与整车数据</td>
+                    <td class="action-required">待处理</td>
+                </tr>
+                <tr>
+                    <td>查询相关车辆故障记录</td>
+                    <td class="person">郭工</td>
+                    <td>分析是否有偶发MOS故障</td>
+                    <td class="action-required">待处理</td>
+                </tr>
+                <tr>
+                    <td>优先换2%偏差件分析</td>
+                    <td class="person">刘工/郭工</td>
+                    <td>保养机会主动换件</td>
+                    <td class="action-required">待处理</td>
+                </tr>
+                <tr>
+                    <td>推进ESD专题活动</td>
+                    <td class="person">舒工</td>
+                    <td>按计划节点完成</td>
+                    <td>进行中</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>附件</h2>
+        <p><strong>异常电阻清单：</strong>0319批次41例偏差件（由舒工提供）</p>
+        <p><strong>测试程序更新：</strong>管控范围调整为±1.5%（已实施）</p>
+        <p><strong>SOP更新：</strong>上料检查规范（物料状态检查/放置要求）</p>
+    </div>
+</body>
+</html>
