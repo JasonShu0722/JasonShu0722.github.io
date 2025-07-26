@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工艺验证计划会议纪要</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 30px 40px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .meeting-info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            background: #34495e;
+            padding: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .info-item {
+            margin: 5px 15px;
+        }
+        
+        .info-item strong {
+            font-weight: 600;
+            margin-right: 8px;
+        }
+        
+        .section {
+            padding: 30px 40px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+            font-size: 1.6rem;
+        }
+        
+        h3 {
+            color: #2980b9;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+        
+        .attendees {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .attendee-card {
+            background: #e8f4fd;
+            border-radius: 8px;
+            padding: 12px 15px;
+            min-width: 200px;
+            flex: 1;
+        }
+        
+        .attendee-card h4 {
+            color: #2980b9;
+            margin-bottom: 5px;
+        }
+        
+        .agenda-items {
+            margin-left: 20px;
+        }
+        
+        .agenda-item {
+            margin-bottom: 25px;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .agenda-item h4 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .decision {
+            background: #e8f4fd;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+        
+        .action-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .action-table th {
+            background: #2c3e50;
+            color: white;
+            text-align: left;
+            padding: 12px 15px;
+        }
+        
+        .action-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .action-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        .action-table tr:hover {
+            background: #f1f7fd;
+        }
+        
+        .priority-high {
+            background: #ffeef0;
+            color: #e74c3c;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+        
+        .priority-medium {
+            background: #fff8e6;
+            color: #f39c12;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+        
+        .key-point {
+            background: #fffae6;
+            border-left: 4px solid #f1c40f;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #f5f7fa;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 20px;
+            }
+            
+            .meeting-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .attendee-card {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>工艺验证计划评审会议纪要</h1>
+            <p>产品试做阶段工艺验证方案讨论与决策</p>
+        </header>
+        
+        <div class="meeting-info">
+            <div class="info-item"><strong>会议日期：</strong>2023年7月（具体日期待确认）</div>
+            <div class="info-item"><strong>会议形式：</strong>线上会议</div>
+            <div class="info-item"><strong>记录人：</strong>Mandy</div>
+        </div>
+        
+        <div class="section">
+            <h2>参会人员</h2>
+            <div class="attendees">
+                <div class="attendee-card">
+                    <h4>金老师</h4>
+                    <p>会议主持人/质量专家</p>
+                </div>
+                <div class="attendee-card">
+                    <h4>Mandy</h4>
+                    <p>会议记录/USI工程代表</p>
+                </div>
+                <div class="attendee-card">
+                    <h4>刘工</h4>
+                    <p>中科易创硬件代表</p>
+                </div>
+                <div class="attendee-card">
+                    <h4>苏工</h4>
+                    <p>工艺专家</p>
+                </div>
+                <div class="attendee-card">
+                    <h4>其他与会人员</h4>
+                    <p>汪工、胜楠等工程团队成员</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>会议目标</h2>
+            <p>评审USI提出的120套产品试做工艺验证计划，确保试做阶段工艺验证方案完整有效，识别关键风险点并确定应对措施。</p>
+        </div>
+        
+        <div class="section">
+            <h2>会议议程与讨论要点</h2>
+            <div class="agenda-items">
+                <div class="agenda-item">
+                    <h4>1. PCB来料检验方案</h4>
+                    <div class="decision">
+                        <strong>决策：</strong> 
+                        <ul>
+                            <li>中科易创需提供PCB特殊特性尺寸要求清单</li>
+                            <li>增加连接器专项检验（引脚歪斜、塑料破损等）</li>
+                            <li>粗糙度要求明确为铜厚 ≤ 具体数值</li>
+                            <li>主容类物料增加LCR测试</li>
+                        </ul>
+                    </div>
+                    <div class="key-point">
+                        <strong>关键点：</strong> 针对新PCB供应商（大洋），需加强来料检验，确保重点尺寸参数CPK≥1.67
+                    </div>
+                </div>
+                
+                <div class="agenda-item">
+                    <h4>2. 锡膏印刷工艺验证</h4>
+                    <div class="decision">
+                        <strong>决策：</strong> 
+                        <ul>
+                            <li>参数验证使用2片光板重复测试</li>
+                            <li>效果确认通过SPI测试30片板子完成</li>
+                            <li>钢网张力增加极差管控标准</li>
+                            <li>炉温曲线需匹配中科易创提供的参数</li>
+                        </ul>
+                    </div>
+                    <div class="key-point">
+                        <strong>关键点：</strong> 针对前出/侧出两种连接器版本，需分别验证AOI程序
+                    </div>
+                </div>
+                
+                <div class="agenda-item">
+                    <h4>3. 底部填充工艺验证</h4>
+                    <div class="decision">
+                        <strong>决策：</strong> 
+                        <ul>
+                            <li>空洞率标准按NDS要求执行（&lt;10%）</li>
+                            <li>需详细验证点胶路径、预热温度、固化温度等参数</li>
+                            <li>破坏性切片验证增加至2片</li>
+                            <li>胶水TG点需高于器件周围脂肪热温度</li>
+                        </ul>
+                    </div>
+                    <div class="key-point">
+                        <strong>关键点：</strong> 底部填充工艺有挑战性，需制定详细验证计划
+                    </div>
+                </div>
+                
+                <div class="agenda-item">
+                    <h4>4. 测试与烧录程序</h4>
+                    <div class="decision">
+                        <strong>决策：</strong> 
+                        <ul>
+                            <li>AOI验证需包含各类NG样件（特别是连接器虚焊）</li>
+                            <li>烧录程序工序安排需重新评估（建议放最后工序）</li>
+                            <li>FCT后需增加版本回读确认</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="agenda-item">
+                    <h4>5. 三防漆涂覆工艺</h4>
+                    <div class="decision">
+                        <strong>决策：</strong> 
+                        <ul>
+                            <li>按中科易创提供的作业指导书执行</li>
+                            <li>确保连接器PIN针无三防漆污染</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>重要决策</h2>
+            <div class="decision">
+                <ul>
+                    <li>波峰焊锡棒由0307更换为305（阿尔法品牌），熔点更低润湿性更好</li>
+                    <li>BGA空洞率标准暂定30%，待后续确认</li>
+                    <li>工艺验证需输出详细BOE报告，不能仅口头确认</li>
+                    <li>所有特殊要求需在验证开始前正式提供给USI</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>行动项跟踪表</h2>
+            <table class="action-table">
+                <thead>
+                    <tr>
+                        <th>任务内容</th>
+                        <th>责任人</th>
+                        <th>截止时间</th>
+                        <th>优先级</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>提供PCB特殊特性尺寸要求清单</td>
+                        <td>刘工（中科易创）</td>
+                        <td>会议当天</td>
+                        <td><span class="priority-high">高</span></td>
+                    </tr>
+                    <tr>
+                        <td>提供NDS底部填充标准要求</td>
+                        <td>刘工（中科易创）</td>
+                        <td>2023-07-XX</td>
+                        <td><span class="priority-high">高</span></td>
+                    </tr>
+                    <tr>
+                        <td>完善详细工艺验证计划（含数量评估）</td>
+                        <td>Mandy（USI）</td>
+                        <td>2023-07-XX</td>
+                        <td><span class="priority-high">高</span></td>
+                    </tr>
+                    <tr>
+                        <td>确认烧录程序工序安排</td>
+                        <td>刘工/业工</td>
+                        <td>2023-07-XX</td>
+                        <td><span class="priority-medium">中</span></td>
+                    </tr>
+                    <tr>
+                        <td>提供三防漆作业指导书</td>
+                        <td>中科易创</td>
+                        <td>2023-07-XX</td>
+                        <td><span class="priority-medium">中</span></td>
+                    </tr>
+                    <tr>
+                        <td>完成供应商调查表</td>
+                        <td>Mandy（USI）</td>
+                        <td>2023-07-XX（周五16:00）</td>
+                        <td><span class="priority-high">高</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>关键风险与注意事项</h2>
+            <div class="key-point">
+                <strong>验证板数量风险：</strong> 原定120套可能不足，需根据详细验证计划重新评估数量
+            </div>
+            <div class="key-point">
+                <strong>底部填充工艺风险：</strong> 10%空洞率要求具有挑战性，需充分验证参数
+            </div>
+            <div class="key-point">
+                <strong>连接器检验风险：</strong> 需特别关注引脚虚焊问题，强化AOI检验
+            </div>
+            <div class="key-point">
+                <strong>时间风险：</strong> 所有准备工作需在试做开始前完成，时间紧迫
+            </div>
+        </div>
+        
+        <footer>
+            <p>会议纪要生成时间：2023年7月XX日 | 本文件为正式会议记录文件</p>
+            <p>© 2023 专业会议纪要生成系统 | HTML5标准兼容</p>
+        </footer>
+    </div>
+</body>
+</html>
