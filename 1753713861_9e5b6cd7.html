@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会议纪要 - 120套试生产验证计划评审会</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+        }
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .meeting-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background: #e9ecef;
+            padding: 15px 20px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .info-item {
+            margin: 8px 15px;
+            min-width: 200px;
+        }
+        .info-item strong {
+            color: #2c3e50;
+            display: inline-block;
+            width: 80px;
+        }
+        .section {
+            padding: 25px 30px;
+            border-bottom: 1px solid #eee;
+        }
+        .section:last-child {
+            border-bottom: none;
+        }
+        .section-title {
+            color: #2c3e50;
+            border-left: 4px solid #3498db;
+            padding-left: 12px;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+        .content-box {
+            background: #f8f9fa;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 3px solid #3498db;
+        }
+        .decision-box {
+            background: #e7f3ff;
+            border-left: 3px solid #1e88e5;
+        }
+        .priority-high {
+            background: #ffebee;
+            border-left: 3px solid #e53935;
+        }
+        .action-plan {
+            background: #e8f5e9;
+            border-left: 3px solid #43a047;
+        }
+        .topic-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 15px 0 10px;
+            font-size: 18px;
+        }
+        .key-item {
+            padding: 8px 12px;
+            margin: 8px 0;
+            border-radius: 4px;
+        }
+        .decision-item {
+            background: #e3f2fd;
+        }
+        .action-item {
+            background: #c8e6c9;
+        }
+        .highlight {
+            background-color: #fff9c4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+            text-align: left;
+            padding: 12px 15px;
+        }
+        td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+        .tag {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .tag-decision {
+            background: #bbdefb;
+            color: #0d47a1;
+        }
+        .tag-action {
+            background: #c8e6c9;
+            color: #1b5e20;
+        }
+        .tag-priority {
+            background: #ffcdd2;
+            color: #b71c1c;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #6c757d;
+            font-size: 14px;
+            border-top: 1px solid #eee;
+        }
+        @media (max-width: 768px) {
+            .meeting-info {
+                flex-direction: column;
+            }
+            .section {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 页眉 -->
+        <div class="header">
+            <h1>会议纪要 - 120套试生产验证计划评审会</h1>
+            <p>工艺验证计划与关键质量控制点讨论</p>
+        </div>
+        
+        <!-- 会议基本信息 -->
+        <div class="meeting-info">
+            <div class="info-item"><strong>时间：</strong>2023年X月X日（星期四）</div>
+            <div class="info-item"><strong>地点：</strong>线上会议</div>
+            <div class="info-item"><strong>记录人：</strong>会议纪要专家</div>
+        </div>
+        
+        <!-- 参会人员 -->
+        <div class="section">
+            <h2 class="section-title">参会人员</h2>
+            <div class="content-box">
+                <p>金老师（A）、Mandy（B）、刘工（C）、苏工（D）、振东（E）、汪工（F）、胜楠（H）、其他项目成员</p>
+            </div>
+        </div>
+        
+        <!-- 会议议程 -->
+        <div class="section">
+            <h2 class="section-title">会议议程</h2>
+            <div class="content-box">
+                <div class="topic-title">1. 来料检验标准确认</div>
+                <p>重点讨论PCB、电子料、连接器等来料检验要求</p>
+                
+                <div class="topic-title">2. SMT工艺验证计划</div>
+                <p>锡膏印刷、回流焊、AOI检测等工艺参数验证方案</p>
+                
+                <div class="topic-title">3. 特殊工艺质量控制</div>
+                <p>底部填充空洞率、三防漆涂覆等关键工艺验证</p>
+                
+                <div class="topic-title">4. 验证数量与计划安排</div>
+                <p>确定各工序验证所需样品数量及时间节点</p>
+            </div>
+        </div>
+        
+        <!-- 关键讨论与决策 -->
+        <div class="section">
+            <h2 class="section-title">关键讨论与决策</h2>
+            
+            <div class="content-box decision-box">
+                <div class="topic-title">来料检验标准 <span class="tag tag-priority">高优先级</span></div>
+                <div class="key-item decision-item">
+                    <p><span class="tag tag-decision">决策</span> PCB特殊特性检验：中科易创<span class="highlight">当日提供</span>特殊尺寸要求，USI按标准执行</p>
+                    <p><span class="tag tag-decision">决策</span> 电子料检验：主容类需测<span class="highlight">LCR值</span>，芯片类检查包装丝印</p>
+                    <p><span class="tag tag-decision">决策</span> 连接器检验：需建立专项检验标准，重点检查<span class="highlight">引脚歪斜、塑料开裂</span></p>
+                </div>
+            </div>
+            
+            <div class="content-box priority-high">
+                <div class="topic-title">底部填充工艺 <span class="tag tag-priority">关键风险</span></div>
+                <div class="key-item">
+                    <p><span class="tag tag-decision">要求</span> 空洞率必须<span class="highlight">&lt;10%</span>，按NDS标准执行</p>
+                    <p><span class="tag tag-decision">决策</span> 需详细验证计划：点胶路径（L/U型）、预热温度（≤80℃）、固化参数</p>
+                    <p><span class="tag tag-decision">方法</span> 使用裸板+芯片验证，最终<span class="highlight">破坏性切片2片</span>确认</p>
+                </div>
+            </div>
+            
+            <div class="content-box">
+                <div class="topic-title">SMT工艺控制</div>
+                <div class="key-item decision-item">
+                    <p><span class="tag tag-decision">标准</span> 锡膏印刷厚度：<span class="highlight">60-190μm</span>，BGA空洞率&lt;30%</p>
+                    <p><span class="tag tag-decision">要求</span> 炉温曲线需匹配锡膏参数（中科提供）</p>
+                    <p><span class="tag tag-decision">重点</span> AOI程序需包含<span class="highlight">连接器虚焊NG样件</span>验证</p>
+                </div>
+            </div>
+            
+            <div class="content-box">
+                <div class="topic-title">波峰焊锡棒变更</div>
+                <div class="key-item decision-item">
+                    <p><span class="tag tag-decision">决策</span> 建议采用<span class="highlight">阿尔法305锡棒</span>（熔点更低，润湿性更好）</p>
+                    <p>待苏工与供应商最终确认</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 行动计划 -->
+        <div class="section">
+            <h2 class="section-title">行动计划</h2>
+            <div class="content-box action-plan">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>任务内容</th>
+                            <th>负责人</th>
+                            <th>完成时间</th>
+                            <th>优先级</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>提供PCB特殊特性要求文件</td>
+                            <td>刘工（中科易创）</td>
+                            <td>当日</td>
+                            <td><span class="tag tag-priority">紧急</span></td>
+                        </tr>
+                        <tr>
+                            <td>提交底部填充详细验证计划（含参数、步骤、数量）</td>
+                            <td>Mandy（USI）</td>
+                            <td>次日</td>
+                            <td><span class="tag tag-priority">紧急</span></td>
+                        </tr>
+                        <tr>
+                            <td>确认PCBA元器件耐压要求（&lt;500V部位）</td>
+                            <td>刘工（中科易创）</td>
+                            <td>2日内</td>
+                            <td><span class="tag tag-action">高</span></td>
+                        </tr>
+                        <tr>
+                            <td>提供三防漆工艺样品板</td>
+                            <td>胜楠（中科易创）</td>
+                            <td>次日</td>
+                            <td><span class="tag tag-action">中</span></td>
+                        </tr>
+                        <tr>
+                            <td>完成供应商调查表</td>
+                            <td>Mandy（USI）</td>
+                            <td>周五下午4点前</td>
+                            <td><span class="tag tag-action">高</span></td>
+                        </tr>
+                        <tr>
+                            <td>烧录工序位置最终确认（FCT后/包装前）</td>
+                            <td>刘工+叶工</td>
+                            <td>3日内</td>
+                            <td><span class="tag tag-action">中</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- 验证数量要求 -->
+        <div class="section">
+            <h2 class="section-title">验证数量要求</h2>
+            <div class="content-box">
+                <div class="key-item">
+                    <p><span class="highlight">原定120套</span>样品需重新评估，关键工艺验证要求：</p>
+                    <ul style="padding-left: 20px; margin-top: 10px;">
+                        <li>锡膏印刷/回流焊：<span class="highlight">30片CPK验证</span></li>
+                        <li>AOI程序验证：<span class="highlight">30片+NG样件</span></li>
+                        <li>底部填充：参数调试板+<span class="highlight">2片切片</span></li>
+                        <li>三防漆：<span class="highlight">30片膜厚测试</span></li>
+                    </ul>
+                </div>
+                <div class="key-item action-item">
+                    <p><span class="tag tag-action">行动项</span> USI需<span class="highlight">今晚提供详细验证数量计划</span>（含各工序需求）</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 页脚 -->
+        <div class="footer">
+            <p>会议纪要生成时间：2023年X月X日 | 专业会议纪要HTML生成系统</p>
+            <p>备注：所有决议以正式签字文件为准</p>
+        </div>
+    </div>
+</body>
+</html>
