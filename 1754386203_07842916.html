@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会议纪要 - 银宝山新7月质量检讨会</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .meeting-header {
+            background: #1a5276;
+            color: white;
+            padding: 25px;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .meeting-header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .metadata {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+            justify-content: center;
+        }
+        .meta-item {
+            background: rgba(255,255,255,0.15);
+            padding: 10px 15px;
+            border-radius: 4px;
+            min-width: 200px;
+        }
+        .meta-item h3 {
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding-bottom: 5px;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        .container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .section {
+            padding: 25px;
+            border-bottom: 1px solid #eee;
+        }
+        .section:last-child {
+            border-bottom: none;
+        }
+        h2 {
+            color: #1a5276;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #aed6f1;
+            font-size: 22px;
+        }
+        h3 {
+            color: #2874a6;
+            margin: 20px 0 10px;
+            font-size: 18px;
+        }
+        ul, ol {
+            padding-left: 25px;
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .priority-high {
+            color: #c0392b;
+            font-weight: bold;
+            background: rgba(192,57,43,0.08);
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .priority-medium {
+            color: #d35400;
+            font-weight: bold;
+            background: rgba(211,84,0,0.08);
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .decision-item {
+            background: #e7f3ff;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+            border-radius: 0 4px 4px 0;
+        }
+        .action-plan {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .action-plan th {
+            background: #2c3e50;
+            color: white;
+            text-align: left;
+            padding: 12px 15px;
+        }
+        .action-plan td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .action-plan tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        .action-plan tr:hover {
+            background-color: #ebf5fb;
+        }
+        .key-point {
+            background: #fffde7;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #ffd600;
+            border-radius: 0 4px 4px 0;
+        }
+        .critical-issue {
+            background: #ffebee;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #f44336;
+            border-radius: 0 4px 4px 0;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .metadata {
+                flex-direction: column;
+                align-items: center;
+            }
+            .meta-item {
+                width: 100%;
+            }
+            .section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="meeting-header">
+            <h1>银宝山新质量检讨会会议纪要</h1>
+            <div class="metadata">
+                <div class="meta-item">
+                    <h3>会议时间</h3>
+                    <p>2023年8月上旬（具体日期待确认）</p>
+                </div>
+                <div class="meta-item">
+                    <h3>会议地点</h3>
+                    <p>线上会议（腾讯会议/Teams等）</p>
+                </div>
+                <div class="meta-item">
+                    <h3>主要参会人员</h3>
+                    <ul>
+                        <li>说话人A（客户方代表）</li>
+                        <li>说话人B（客户方代表）</li>
+                        <li>说话人C（银宝山新）</li>
+                        <li>说话人D（客户方质量经理）</li>
+                        <li>说话人E（客户方SQE）</li>
+                        <li>说话人F（银宝山新管理层）</li>
+                        <li>孙军（银宝山新驻场全检员）</li>
+                        <li>张总（银宝山新负责人）</li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <div class="section">
+            <h2>一、会议议程</h2>
+            <ol>
+                <li>1-7月订单交付达成情况回顾</li>
+                <li>8月份排产交付计划及风险分析</li>
+                <li>内部质量问题改善方案汇报</li>
+                <li>重点质量问题案例分析（氧化/泄漏/毛刺）</li>
+                <li>质量提升方案及痛点改进计划</li>
+                <li>客户投诉处理及供应商评级通报</li>
+                <li>后续行动计划与责任分工</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2>二、核心问题通报</h2>
+            
+            <div class="critical-issue">
+                <h3>严重质量问题</h3>
+                <ul>
+                    <li><span class="priority-high">7月份20批次质量问题，氧化问题占比超60%</span></li>
+                    <li>连续<span class="priority-high">4个月被评为D级供应商</span>（质量协议最差评级）</li>
+                    <li>0070、0072、0073物料<span class="priority-high">每批到货均有氧化问题</span></li>
+                    <li>客户端发现批量泄漏问题（0063项目）</li>
+                </ul>
+            </div>
+            
+            <div class="key-point">
+                <h3>根本原因分析</h3>
+                <ul>
+                    <li>原因分析停留在表面现象（如"员工漏检"），未深入使用5Why分析法</li>
+                    <li>ADC12材料含铜量高，雨季湿度大加剧氧化问题</li>
+                    <li>防氧化措施不足（加工后未及时清洗烘干）</li>
+                    <li>质量体系执行不到位，改善措施未有效落地</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>三、重要决议</h2>
+            
+            <div class="decision-item">
+                <h3>紧急应对措施</h3>
+                <ul>
+                    <li><strong>朱经理立即驻场</strong>直至8月15日关键交付期结束</li>
+                    <li><strong>增加全检人员</strong>，确保当天到货物料当天完成全检</li>
+                    <li>在加工环节<span class="priority-medium">增加抗氧化剂处理</span>工序（立即执行）</li>
+                </ul>
+            </div>
+            
+            <div class="decision-item">
+                <h3>质量体系整改</h3>
+                <ul>
+                    <li><span class="priority-high">重新提交深度质量分析报告</span>（使用5Why分析法）</li>
+                    <li>8月31日前完成汽车产品专用清洗线建设</li>
+                    <li>导入自动化检测设备（在线实时监控）</li>
+                </ul>
+            </div>
+            
+            <div class="decision-item">
+                <h3>供应商管理</h3>
+                <ul>
+                    <li>启动<span class="priority-high">质量体系重新审核</span>（审核未通过将影响新项目定点）</li>
+                    <li>建立质量问题升级机制（24小时响应）</li>
+                    <li>高层必须参与月度质量检讨会（张总亲自出席）</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>四、行动计划</h2>
+            
+            <table class="action-plan">
+                <thead>
+                    <tr>
+                        <th>任务内容</th>
+                        <th>负责人</th>
+                        <th>截止时间</th>
+                        <th>优先级</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>提交氧化问题深度分析报告（含5Why分析）</td>
+                        <td>张总</td>
+                        <td>2023-08-10</td>
+                        <td class="priority-high">高</td>
+                    </tr>
+                    <tr>
+                        <td>实施抗氧化剂处理工艺</td>
+                        <td>朱经理</td>
+                        <td>2023-08-07</td>
+                        <td class="priority-high">高</td>
+                    </tr>
+                    <tr>
+                        <td>0070/0072/0073物料氧化问题整改</td>
+                        <td>质量部</td>
+                        <td>2023-08-15</td>
+                        <td class="priority-high">高</td>
+                    </tr>
+                    <tr>
+                        <td>汽车产品专用清洗线建设</td>
+                        <td>工程部</td>
+                        <td>2023-08-31</td>
+                        <td class="priority-medium">中</td>
+                    </tr>
+                    <tr>
+                        <td>自动化检测设备导入与调试</td>
+                        <td>技术部</td>
+                        <td>2023-09-15</td>
+                        <td class="priority-medium">中</td>
+                    </tr>
+                    <tr>
+                        <td>质量体系内部审核与整改</td>
+                        <td>张总</td>
+                        <td>2023-08-25</td>
+                        <td class="priority-high">高</td>
+                    </tr>
+                    <tr>
+                        <td>建立质量回溯机制与培训体系</td>
+                        <td>人力资源部</td>
+                        <td>2023-09-01</td>
+                        <td class="priority-medium">中</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>五、客户特别要求</h2>
+            <div class="critical-issue">
+                <ul>
+                    <li>质量问题分析必须深入根本原因，禁止使用"员工漏检"等表面描述</li>
+                    <li>高层管理人员（张总）必须参与关键质量会议</li>
+                    <li>对客户承诺的改善措施必须<span class="priority-high">按时闭环</span></li>
+                    <li>连续2个月未达B级及以上评级将启动供应商替换流程</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>本纪要生成时间: 2023年8月X日 | 专业会议纪要HTML生成系统</p>
+        <p>会议内容严格遵循原始记录，未经增删修改</p>
+    </div>
+</body>
+</html>
